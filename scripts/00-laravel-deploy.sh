@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
-echo "Running composer"
-composer install --no-dev --working-dir=/var/www/html
-
-echo "Caching config..."
+# Kept for reference; startup logic lives in scripts/start.sh
+set -e
+composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --working-dir=/var/www/html
 php artisan config:cache
-
-echo "Caching routes..."
 php artisan route:cache
-
-echo "Caching views..."
-php artisan view:cache
-
-echo "Running migrations..."
+php artisan view:cache || true
 php artisan migrate --force
