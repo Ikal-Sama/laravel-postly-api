@@ -17,6 +17,7 @@ if [ ! -f vendor/autoload.php ]; then
 fi
 
 echo "Caching config..."
+php artisan config:clear
 php artisan config:cache
 
 echo "Caching routes..."
