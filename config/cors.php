@@ -14,7 +14,7 @@ return [
 
     'allowed_origins' => array_values(array_filter(array_map(
         'trim',
-        explode(',', env('CORS_ALLOWED_ORIGINS', 'https://posytly-vue.netlify.app,http://localhost:5173,http://127.0.0.1:5173'))
+        explode(',', env('CORS_ALLOWED_ORIGINS', 'https://posytly-vue.netlify.app,http://localhost:5173,http://127.0.0.1:5173,http://localhost:9000'))
     ))),
 
     'allowed_origins_patterns' => [],
